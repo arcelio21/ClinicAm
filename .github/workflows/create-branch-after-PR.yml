@@ -1,0 +1,22 @@
+name: Create Branch After Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create branch
+        run: |
+          # Asume que la rama principal es 'master'
+          git checkout master
+          git pull origin master
+          git checkout -b dev
+          git push origin dev
