@@ -4,5 +4,6 @@
  */
 export enum ClassButton{
   SUCCESS="success",
+  SUCCESS_OUTLINE="success-outline",
   DANGER="danger"
 }
