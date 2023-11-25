@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Monserrat';
+  src: url("assets/fonts/Montserrat-Italic-VariableFont_wght.ttf") format('truetype');
+}
+
 *{
-  margin: auto 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Monserrat';
+}
+
+body{
+  min-height: 100vh;
 }
