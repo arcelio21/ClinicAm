@@ -11,4 +11,5 @@ import { ClassButton } from 'src/app/shared/model/classButton.model';
 })
 export class HomeComponent {
   classBtn: ClassButton = ClassButton.SUCCESS;
+  clssBtnRegister:ClassButton = ClassButton.SUCCESS_OUTLINE;
 }
