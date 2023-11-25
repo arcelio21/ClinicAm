@@ -1,4 +1,32 @@
 
 <!--link docs: https://www.notion.so/CMP-Home-70da32ae67b64cd68d68eb8133bcd0b5-->
-<app-header-home />
-<app-button-redirect [classCss]="classBtn" [value]="'Log In'" pathLink="login" />
+<main class="container">
+
+  <app-header-home class="header" />
+
+  <section class="item body">
+    <article  class="body-left">
+
+      <section class="body-left-buttons">
+        <app-button-redirect class="btn-login" [classCss]="classBtn" [value]="'Log In'" pathLink="login" />
+        <app-button-redirect class="btn-register" [classCss]="clssBtnRegister" [value]="'Register'" pathLink="register" />
+      </section>
+
+      <section class="body-left-text">
+        <p>
+          Descubre una atención médica  centrada
+          en ti en Clinic Am.
+        </p>
+        <p>
+          Nos enorgullece  ofrecer servicios de salud de calidad,
+          respaldados por un equipo dedicado de profesionales médicos
+          y personal comprometido.
+        </p>
+      </section>
+    </article>
+
+    <article class="body-right">
+        <img class="img_medical"  src="../../../../assets/pexels-karolina-grabowska-4021811.jpg" alt="Medico mostrando pastilla" >
+    </article>
+  </section>
+</main>
