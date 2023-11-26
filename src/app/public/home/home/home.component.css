@@ -68,3 +68,35 @@
   padding-right: 2em;
   font-size: 1.3em;
 }
+@media screen and (max-width: 725px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    font-size: .8em;
+  }
+
+  .body{
+    padding-top: 4em;
+    padding-left: 1em;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .body-left{
+    width: 100%;
+  }
+
+  .body-right{
+    width: 100%;
+  }
+
+  .body-left-buttons{
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    font-size: .8em;
+  }
+}
