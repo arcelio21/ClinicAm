@@ -8,8 +8,8 @@
     <article  class="body-left">
 
       <section class="body-left-buttons">
-        <app-button-redirect class="btn-login" [classCss]="classBtn" [value]="'Log In'" pathLink="login" />
-        <app-button-redirect class="btn-register" [classCss]="clssBtnRegister" [value]="'Register'" pathLink="register" />
+        <app-button-redirect class="btn-login" [classCss]="classBtn" [value]="'Log In'" pathLink="/login" />
+        <app-button-redirect class="btn-register" [classCss]="clssBtnRegister" [value]="'Register'" pathLink="/register" />
       </section>
 
       <section class="body-left-text">
@@ -29,4 +29,6 @@
         <img class="img_medical"  src="../../../../assets/pexels-karolina-grabowska-4021811.jpg" alt="Medico mostrando pastilla" >
     </article>
   </section>
+
+  <router-outlet></router-outlet>
 </main>
