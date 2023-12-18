@@ -17,6 +17,17 @@ header{
   /* gap: 1em; */
 }
 
+a{
+  display: flex;
+  align-items: center;
+  text-decoration-line: none;
+}
+
+a:-webkit-any-link:visited {
+  color: #D2F5F3;
+  /* Cambia el color de enlaces visitados */
+}
+
 .welcome_tittle{
   display: flex;
   flex-direction: column;
