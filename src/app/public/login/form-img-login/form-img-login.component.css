@@ -1,0 +1,31 @@
+main{
+  width: 424px;
+  height: 501px;
+}
+
+img{
+  width: 424px;
+  height: 501px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 282px;
+    height: 400px;
+  }
+
+  img {
+    width: 282px;
+    height: 400px;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    display: none;
+  }
+
+}
