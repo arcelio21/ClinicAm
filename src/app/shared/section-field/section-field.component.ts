@@ -1,28 +1,64 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { TypeMessageInput } from '../model/TypeMessageInput';
 
 @Component({
   selector: 'app-section-field',
   templateUrl: './section-field.component.html',
-  styleUrls: ['./section-field.component.css']
+  styleUrls: ['./section-field.component.css'],
 })
-export class SectionFieldComponent implements OnInit {
+export class SectionFieldComponent {
+  @Input()
+  nameInput: string = '';
 
   @Input()
-  nameInput:string="";
+  valueLabel: string = '';
 
   @Input()
-  valueLabel:string="";
+  typeInput: string = '';
 
   @Input()
-  typeButton:string="";
+  placeholder: string = '';
 
   @Input()
-  placeholder:string="";
+  control!: FormControl;
 
+  messageInput: TypeMessageInput = TypeMessageInput.SUCCESS;
 
-  constructor() { }
+  messageLayout:boolean=false;
+  messageInfo:string="";
 
-  ngOnInit() {
+  @Input()
+  pattern="";
+
+  showMessage() {
+
+    if(this.messageLayout===false){
+      this.messageLayout = true;
+    }
+
+    if (this.control.valid) {
+      this.messageInput = TypeMessageInput.SUCCESS;
+      this.messageInfo = 'Informacion Correcta';
+    } else {
+      this.messageInput = TypeMessageInput.ERROR;
+      this.messageInfo = this.getMessage();
+    }
   }
 
+  private getMessage():string{
+    if(this.control.hasError("required")){
+      return "Información es requerida";
+    }
+
+    if (this.control.hasError('minlength')) {
+      return `Cantidad necesaria de caracteres: ${this.control.errors?.['minlength'].requiredLength}`;
+    }
+
+    if(this.control.hasError('pattern')){
+      return `Formato no valido 123456-123456-123456`
+    }
+
+    return "no erros";
+  }
 }

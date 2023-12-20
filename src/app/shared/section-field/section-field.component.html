@@ -1,4 +1,7 @@
-<div class="flex__display" ngClass="">
+<div class="flex__display" >
   <label for="{{nameInput}}">{{valueLabel}}</label>
-  <input type="{{typeButton}}" name="{{nameInput}}" id="{{nameInput}}" placeholder="{{placeholder}}">
+  <input type="{{typeInput}}" name="{{nameInput}}" id="{{nameInput}}" placeholder="{{placeholder}}"
+    [formControl]="control" (keyup)="showMessage()" pattern="{{pattern}}">
+
+  <app-MessageInput *ngIf="messageLayout" [message]="messageInfo" [typeError]="messageInput" />
 </div>
