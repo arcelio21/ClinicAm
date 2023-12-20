@@ -5,10 +5,10 @@
   <section class="flex__display">
     <article class="flex__display">
       <form class="flex__display form_spacing">
-        <app-section-field typeButton="text" nameInput="idencard" valueLabel="Identification Card" placeholder="00-000000-000000"/>
-        <app-section-field typeButton="password" nameInput="pass" valueLabel="Password" placeholder="password"/>
+        <app-section-field typeInput="text" nameInput="idencard" valueLabel="Identification Card" placeholder="00-000000-000000" pattern="^\d{1,6}(-\d{6}){2}$"  [control]="idenCard" />
+        <app-section-field typeInput="password" nameInput="pass" valueLabel="Password" placeholder="password" [control]="password"/>
         <div class="flex__display">
-          <app-button classCss="success" value="Log In" />
+          <app-button (onClickB)="sendData()" classCss="success" value="Log In" />
         </div>
       </form>
     </article>

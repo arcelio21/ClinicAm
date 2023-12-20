@@ -9,11 +9,11 @@ main{
 .flex__display{
   display: flex;
   flex-direction: column;
-  gap: 2em;
 }
 
 .form_spacing{
   padding: 3em 2em;
+  gap: 1em;
 }
 
 .title_form{
@@ -24,7 +24,7 @@ main{
 
 .link_register{
   padding-left: 2em;
-  padding-bottom: 2em;
+  /* padding-bottom: 2em; */
 }
 
 a{
@@ -47,9 +47,6 @@ a:-webkit-any-link:visited {
     padding: 1em 1em;
   }
 
-  .flex__display {
-    gap: 1em;
-  }
 }
 
 @media screen and (max-width: 425px) {
