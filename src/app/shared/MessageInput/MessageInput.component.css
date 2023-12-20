@@ -1,0 +1,22 @@
+.success{
+  display: flex;
+  background-color: #d5ffc7;
+  border: .1em solid #51d850;
+  border-radius: .2em;
+  font-size: .8em;
+  padding-left: .2em;
+  box-sizing: border-box;
+  padding: .2em;
+}
+
+
+.error {
+  display: flex;
+  background-color: #ffdede;
+  border: .1em solid #d85050;
+  border-radius: .2em;
+  font-size: .8em;
+  padding-left: .2em;
+  box-sizing: border-box;
+  padding: .2em;
+}
