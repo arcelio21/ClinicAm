@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { FormImgLoginComponent } from './form-img-login/form-img-login.component';
-import { SectionFieldComponent } from '../../shared/section-field/section-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +16,8 @@ import { SectionFieldComponent } from '../../shared/section-field/section-field.
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class LoginModule { }

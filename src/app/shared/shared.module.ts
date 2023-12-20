@@ -5,6 +5,8 @@ import { ButtonRedirectComponent } from './button-redirect/button-redirect.compo
 import { RouterModule } from '@angular/router';
 import { HeaderHomeComponent } from './header-home/header-home.component';
 import { SectionFieldComponent } from './section-field/section-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageInputComponent } from './MessageInput/MessageInput.component';
 
 
 
@@ -13,11 +15,13 @@ import { SectionFieldComponent } from './section-field/section-field.component';
     ButtonComponent,
     ButtonRedirectComponent,
     HeaderHomeComponent,
-    SectionFieldComponent
+    SectionFieldComponent,
+    MessageInputComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [ButtonComponent,ButtonRedirectComponent,HeaderHomeComponent,SectionFieldComponent]
 })
