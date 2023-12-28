@@ -65,7 +65,6 @@ export class FormLoginComponent implements OnInit, OnDestroy {
   }
 
   sendData() {
-    //TODO SOLO CAPTURAR EL ULTIMO EVENTO
     this.click$.next();
   }
 
