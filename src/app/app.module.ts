@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 
+//TODO CAMBIAR ESTADO A GLOBAL DE USUARIOS
 @NgModule({
   declarations: [
     AppComponent
