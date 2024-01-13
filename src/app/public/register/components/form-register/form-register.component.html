@@ -1,0 +1,15 @@
+<section>
+  <div>
+    <h2>Regístrese como Paciente Nuevo</h2>
+  </div>
+
+  <div>
+    <form [formGroup]="personalData">
+      <app-section-register-primary  class="form"  [control]="personalData.controls.personal" (nextForm)="nextSectionFor($event)" *ngIf="sectionForms===1"  />
+
+      <app-section-register-secondary class="form"  [control]="personalData.controls.address"  (nextForm)="nextSectionFor($event)"  *ngIf="sectionForms===2" />
+
+      <app-section-register-tertiary class="form"  [control]="personalData.controls.dataAccount" (nextForm)="nextSectionFor($event)" (sendData)="sendData()"  *ngIf="sectionForms===3" />
+    </form>
+  </div>
+</section>
