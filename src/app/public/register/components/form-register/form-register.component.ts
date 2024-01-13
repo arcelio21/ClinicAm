@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { validateDateLessThanToday, validatePasswordEquals } from '../../utils/CustomValidator';
+import { validateDateLessThanToday } from '../../utils/CustomValidator';
 import {RegisterUserService} from "../../service/register/register-user.service";
 import {UserRegister} from "../../model/user-register";
 import {IdentificationCardPipe} from "../../pipes/identification-card.pipe";
