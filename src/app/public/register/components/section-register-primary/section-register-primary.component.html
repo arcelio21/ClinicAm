@@ -1,0 +1,33 @@
+<app-section-field
+  [control]="control.controls.idencard"
+  nameInput="idenCard"
+  valueLabel="Identification Card"
+  placeholder="00-000000-000000"
+  typeInput="text"
+  pattern="^\d{1,6}(-\d{6}){2}$"
+/>
+<app-section-field
+  [control]="control.controls.name"
+  nameInput="name"
+  valueLabel="Name"
+  placeholder="name"
+  typeInput="text"
+/>
+<app-section-field
+  [control]="control.controls.lastName"
+  nameInput="lastName"
+  valueLabel="Lastname"
+  placeholder="lastname"
+  typeInput="text"
+/>
+
+<app-section-field
+  [control]="control.controls.contact"
+  nameInput="contact"
+  valueLabel="Contact"
+  placeholder="61234567"
+  typeInput="tel"
+  pattern="^[67]\d*$"
+  [messageError]="'El primer carácter debe ser 6 o 7, seguido de dígitos numéricos.'"
+/>
+<app-button value="Next" classCss="success" (onClickB)="nextFormSection()" />

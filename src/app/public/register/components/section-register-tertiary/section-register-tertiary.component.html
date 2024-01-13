@@ -1,0 +1,25 @@
+<app-section-field
+  [control]="control.controls.email"
+  nameInput="email"
+  valueLabel="Email"
+  placeholder="example@email.com"
+  typeInput="email"
+/>
+
+<app-section-field
+  [control]="control.controls.confirmPassword"
+  nameInput="passwordRepeat"
+  valueLabel="Repeat Password"
+  placeholder="repeat password"
+  typeInput="password"
+/>
+
+<app-section-field
+  [control]="control.controls.birthday"
+  nameInput="birthday"
+  valueLabel="Birthday"
+  typeInput="date"
+/>
+
+<app-button  value="Prev" classCss="success-outline" (onClickB)="prevFormSection()"/>
+<app-button value="Send" classCss="success" (onClickB)="sendData.emit()" />

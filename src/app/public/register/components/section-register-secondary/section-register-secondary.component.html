@@ -1,0 +1,10 @@
+<app-select-input-custom (valueSelected)="getDistrictByIdProvince($event)"  [control]="control.controls.province" labelValue="Province" [dataOptions]="provincesOption"/>
+
+<app-select-input-custom (valueSelected)="getVillageByIdDistrict($event)"  [control]="control.controls.district" labelValue="District" [dataOptions]="districtsOption"/>
+
+<app-select-input-custom  [control]="control.controls.village" labelValue="Village" [dataOptions]="villageOption" />
+
+<app-section-field [control]="control.controls.specificAddress" nameInput="specific_address" typeInput="text" placeholder="Specific Address" valueLabel="Address Specific"  />
+
+<app-button  value="Prev" classCss="success-outline" (onClickB)="prevFormSection()"/>
+<app-button value="Next" classCss="success" (onClickB)="nextFormSection()" />
