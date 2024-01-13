@@ -4,8 +4,9 @@ import { AuthUser } from '../model/AuthUser';
 import { UserLogin } from '../model/UserLogin';
 import { NotificationProcess } from 'src/app/shared/model/NotificationProcess';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '../model/Token';
-import {decodeJwt}  from 'jose';
+import { Token } from '../../../shared/model/Token';
+import {DecodeJwtPipe} from "../../../shared/pipes/decode-jwt.pipe";
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {
@@ -18,13 +19,13 @@ export class AuthService {
     withCrdentials: true,
   };
 
-  readonly URL: string = 'http://localhost:8082/api/v1/';
 
   private notificationAuth = new Subject<NotificationProcess>();
   getNotificationAuth = this.notificationAuth.asObservable();
 
   constructor(
     private httpClient: HttpClient,
+    private decodeJwt:DecodeJwtPipe
   ) {}
 
   public authenticateUser(userLogin: UserLogin): Observable<AuthUser> {
@@ -33,15 +34,14 @@ export class AuthService {
 
     return this.httpClient
       .post<Token>(
-        this.URL + 'auth/authenticate',
+        environment.URL + 'auth/authenticate',
         userLoginFormatted,
         this.optionsHttp
       )
       .pipe(
         map(response => {
             let token: string = response?.body?.token || "";
-            let userDecode:AuthUser = decodeJwt(token) as AuthUser;
-            userDecode.token = token;
+            let userDecode:AuthUser = this.decodeJwt.transform(token);
 
             this.notificationAuth.next({
               isSuccess: true,
