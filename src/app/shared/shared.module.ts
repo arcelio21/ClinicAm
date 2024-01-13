@@ -7,6 +7,8 @@ import { HeaderHomeComponent } from './header-home/header-home.component';
 import { SectionFieldComponent } from './section-field/section-field.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessageInputComponent } from './MessageInput/MessageInput.component';
+import { SelectInputCustomComponent } from './select-input-custom/select-input-custom.component';
+import { DecodeJwtPipe } from './pipes/decode-jwt.pipe';
 
 
 
@@ -16,13 +18,16 @@ import { MessageInputComponent } from './MessageInput/MessageInput.component';
     ButtonRedirectComponent,
     HeaderHomeComponent,
     SectionFieldComponent,
-    MessageInputComponent
+    MessageInputComponent,
+    SelectInputCustomComponent,
+    DecodeJwtPipe
   ],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule
   ],
-  exports: [ButtonComponent,ButtonRedirectComponent,HeaderHomeComponent,SectionFieldComponent]
+  providers:[DecodeJwtPipe],
+  exports: [ButtonComponent,ButtonRedirectComponent,HeaderHomeComponent,SectionFieldComponent,SelectInputCustomComponent]
 })
 export class SharedModule { }
