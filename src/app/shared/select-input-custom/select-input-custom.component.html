@@ -1,0 +1,10 @@
+
+<div class="container">
+  <label for="select">{{labelValue}}</label>
+  <select [formControl]="control" id="select" (change)="showMessage()" >
+    <ng-container *ngFor="let option of dataOptions; let i=index" >
+      <option  [value]="option.id">{{option.name}}</option>
+    </ng-container>
+  </select>
+  <app-MessageInput *ngIf="messageLayout" [message]="messageInfo" [typeError]="messageInput" />
+</div>
