@@ -1,7 +1,10 @@
 <div class="flex__display" >
   <label for="{{nameInput}}">{{valueLabel}}</label>
-  <input type="{{typeInput}}" name="{{nameInput}}" id="{{nameInput}}" placeholder="{{placeholder}}"
-    [formControl]="control" (keyup)="showMessage()" pattern="{{pattern}}">
+  <input *ngIf="typeInput != 'date'" type="{{typeInput}}" name="{{nameInput}}" id="{{nameInput}}" placeholder="{{placeholder}}"
+    [formControl]="control"  (keyup)="showMessage()" pattern="{{pattern}}">
+
+  <input *ngIf="typeInput==='date'" type="{{typeInput}}" name="{{nameInput}}" id="{{nameInput}}" placeholder="{{placeholder}}"
+    [formControl]="control" (change)="showMessage()"  pattern="{{pattern}}">
 
   <app-MessageInput *ngIf="messageLayout" [message]="messageInfo" [typeError]="messageInput" />
 </div>
