@@ -1,0 +1,18 @@
+section{
+  background-color: #D9D9D9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .10fr .80fr;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  row-gap: 1em;
+  padding: 1em;
+  border-radius: 1em ;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+}
