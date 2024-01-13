@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TypeMessageInput } from '../model/TypeMessageInput';
 
@@ -22,6 +22,9 @@ export class SectionFieldComponent {
 
   @Input()
   control!: FormControl;
+
+  @Input()
+  messageError!:string;
 
   messageInput: TypeMessageInput = TypeMessageInput.SUCCESS;
 
@@ -56,9 +59,21 @@ export class SectionFieldComponent {
     }
 
     if(this.control.hasError('pattern')){
-      return `Formato no valido 123456-123456-123456`
+
+      if(this.messageError){
+        return this.messageError;
+      }
+
+      return `Formato no valido`;
     }
 
-    return "no erros";
+    if (this.control.hasError('passwordNotEqual')) {
+      return `Mismatched passwords`;
+    }
+
+    if (this.control.hasError('dateLessThanToday')) {
+      return `Birthday No Valid`;
+    }
+    return "erro not register";
   }
 }
