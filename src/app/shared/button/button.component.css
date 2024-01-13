@@ -9,6 +9,17 @@
   box-shadow: 0 3px #133135;
 }
 
+.success-outline {
+  background-color: #D9D9D9;
+  color: #1B4246;
+  box-shadow: 0px 3px #1B4246;
+  border: .1em #1B4246 solid;
+}
+
+.success-outline:hover {
+  box-shadow: 0 2px #133135;
+}
+
 .danger{
   background-color: #A50F0F;
   color: #D9D9D9;
