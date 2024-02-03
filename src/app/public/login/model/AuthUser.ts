@@ -45,6 +45,6 @@ export interface AuthUser {
 }
 
 
-interface Authority {
+export interface Authority {
   authority: string;
 }
