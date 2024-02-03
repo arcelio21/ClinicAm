@@ -24,12 +24,10 @@ export class FormLoginComponent implements OnInit, OnDestroy {
     Validators.required,
   ]);
 
-  userlog: Observable<UserLogin> = this.store.select(loginUserSelector);
-
   notification$ = this.authService.getNotificationAuth.pipe(
     tap((notification) => {
       if (notification.isSuccess) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/selectUser']);
       } else {
         this.processNotification(notification);
       }
