@@ -1,0 +1,7 @@
+<main>
+  <section *ngIf="authorities">
+    <ng-container  *ngFor="let authority of authorities; let i=index" >
+        <app-button-redirect [value]="authority.authority" classCss="SUCCESS" />
+    </ng-container>
+  </section>
+</main>
